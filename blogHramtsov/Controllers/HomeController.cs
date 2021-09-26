@@ -9,29 +9,45 @@ using System.Threading.Tasks;
 
 namespace blogHramtsov.Controllers
 {
+    /// <summary>  
+    /// Контроллер для работы с главной страницей и политикой конфедициальности
+    /// </summary>
     public class HomeController : Controller
     {
+        /// <summary>
+        /// Поле класса - логгер
+        /// </summary>
+        /// <param name="ILogger">Логгер</param>
         private readonly ILogger<HomeController> _logger;
 
+        /// <summary>
+        /// Констурктор класса <see cref="HomeController"/>
+        /// </summary>
+        /// <param name="logger">Логгер ……</param>
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }
 
-        // Метод отображения представления главной страницы
+        // <summary>
+        // GET: Возвращает страницу Главная
+        // </summary>
         public IActionResult Index()
         {
             return View();
         }
 
-        // Метод  отображения представления страницы ПК
+        // <summary>
+        // GET: Возвращает страницу политики конфединциальности
+        // </summary>
         public IActionResult Privacy()
         {
             return View();
         }
 
-
-        // Обработка ошибок отображения представлений
+        // <summary>
+        // GET: Возвращает страницу ошибки 
+        // </summary>
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
